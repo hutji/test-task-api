@@ -39,3 +39,36 @@ HTTP API включающий в себя базовый эндпоинт для
   ```
     pytest
   ```
+
+## Примеры API эндпоинтов:
+* ```http://127.0.0.1:8080/healthcheck```  GET-запрос – возвращает пустой JSON.
+ ``` json
+{}
+```
+
+* ```http://127.0.0.1:8080/hash```  POST-запрос – вычисляет хэш строки по алгоритму SHA256 и возвращает его в JSON ответе.
+ ``` json
+{
+    "string": "My name is Pavel!"
+}
+```
+ ``` json
+{
+{
+    "hash_string": "8bb80ce11355401f5f45e39717fd00139c5403282b22b53cae595517ff42fd82"
+}
+}
+```
+
+* Примеры ошибок:
+``` json
+{
+    "validated_errors": "Invalid JSON format"
+}
+```
+
+```json
+{
+    "validated_errors": "Field string is required"
+}
+```
