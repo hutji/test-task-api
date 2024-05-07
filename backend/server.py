@@ -1,6 +1,5 @@
 import click
 from aiohttp import web
-
 from handlers import hash_string, healthcheck
 
 
